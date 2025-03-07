@@ -1,0 +1,225 @@
+/* General Styles */
+:root {
+  --primary-color: #1abc9c;
+  --secondary-color: #2c3e50;
+  --background-light: #f4f4f9;
+  --background-dark: #1a1a1a;
+  --text-light: #333;
+  --text-dark: #f4f4f9;
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --gradient: linear-gradient(135deg, var(--primary-color), #3498db);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+body {
+  background-color: var(--background-light);
+  color: var(--text-light);
+  line-height: 1.6;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+body.dark-mode {
+  background-color: var(--background-dark);
+  color: var(--text-dark);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Custom Cursor */
+.cursor {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--primary-color);
+  border-radius: 50%;
+  position: absolute;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease, width 0.2s ease, height 0.2s ease;
+  z-index: 10000;
+}
+
+.cursor.hover {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(26, 188, 156, 0.2);
+}
+
+/* Header Styles */
+header {
+  background-color: var(--secondary-color);
+  color: #fff;
+  padding: 20px 0;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: var(--primary-color);
+}
+
+.button-container {
+  display: flex;
+  gap: 10px;
+}
+
+.button-container button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button-container button:hover {
+  transform: scale(1.1);
+}
+
+.whatsapp {
+  background-color: #25d366;
+  color: #fff;
+}
+
+.whatsapp:hover {
+  background-color: #128c7e;
+}
+
+.gmail {
+  background-color: #db4437;
+  color: #fff;
+}
+
+.gmail:hover {
+  background-color: #c1351d;
+}
+
+/* Work Section */
+.work {
+  padding: 100px 20px;
+  text-align: center;
+  background-color: var(--background-light);
+}
+
+body.dark-mode .work {
+  background-color: var(--background-dark);
+}
+
+.work h1 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: var(--primary-color);
+}
+
+.project-links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.project-links a {
+  font-size: 1.2rem;
+  color: var(--text-light);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+body.dark-mode .project-links a {
+  color: var(--text-dark);
+}
+
+.project-links a:hover {
+  color: var(--primary-color);
+  transform: translateX(10px);
+}
+
+/* Footer Styles */
+.main-foot {
+  background-color: var(--secondary-color);
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.foot {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.foot img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.foot img:hover {
+  transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .head {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+  }
+
+  .work h1 {
+      font-size: 2rem;
+  }
+
+  .project-links a {
+      font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-links {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .work h1 {
+      font-size: 1.5rem;
+  }
+}
