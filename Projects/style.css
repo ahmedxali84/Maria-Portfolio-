@@ -172,6 +172,45 @@ body.dark-mode .project-links a {
   transform: translateX(10px);
 }
 
+/* Project Card Styles */
+.project-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 600px;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.project-image {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.project-details h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.project-details p {
+  font-size: 1rem;
+  color: var(--text-light);
+}
+
+body.dark-mode .project-details p {
+  color: var(--text-dark);
+}
+
 /* Footer Styles */
 .main-foot {
   background-color: var(--secondary-color);
@@ -196,30 +235,70 @@ body.dark-mode .project-links a {
   transform: scale(1.2);
 }
 
+/* Dark Mode Toggle */
+.dark-mode-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+  transform: scale(1.1);
+}
+
+.dark-mode-toggle img {
+  width: 24px;
+  height: 24px;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .head {
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
   }
 
   .work h1 {
-      font-size: 2rem;
+    font-size: 2rem;
   }
 
   .project-links a {
-      font-size: 1rem;
+    font-size: 1rem;
+  }
+
+  .project-card {
+    padding: 15px;
   }
 }
 
 @media (max-width: 480px) {
   .nav-links {
-      flex-direction: column;
-      align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   .work h1 {
-      font-size: 1.5rem;
+    font-size: 1.5rem;
+  }
+
+  .project-details h2 {
+    font-size: 1.2rem;
+  }
+
+  .project-details p {
+    font-size: 0.9rem;
   }
 }
